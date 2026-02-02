@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Aircraft Testing</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div id="menu" class="overlay visible">
+        <div class="panel">
+          <h1>Aircraft Testing</h1>
+          <p>FPV drone simulator — test your flight skills.</p>
+          <div class="controls">
+            <div><span>W/A/S/D</span> Move</div>
+            <div><span>Q/E</span> Yaw left/right</div>
+            <div><span>R</span> Reset after crash</div>
+          </div>
+          <button id="start-button">Start Flight</button>
+        </div>
+      </div>
+
+      <div id="hud" class="overlay">
+        <div class="panel hud-panel">
+          <div class="status">
+            <span id="status-text">Ready for takeoff</span>
+          </div>
+          <button id="reset-button">Reset</button>
+        </div>
+      </div>
+
+      <div id="crash" class="overlay">
+        <div class="panel">
+          <h2>Crash detected</h2>
+          <p>Your aircraft needs a reset.</p>
+          <button id="crash-reset">Reset Flight</button>
+        </div>
+      </div>
+
+      <canvas id="scene"></canvas>
+    </div>
+
+    <script type="module" src="main.js"></script>
+  </body>
+</html>
