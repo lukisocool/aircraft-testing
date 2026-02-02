@@ -1,0 +1,130 @@
+:root {
+  color-scheme: dark;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  --glass: rgba(10, 12, 18, 0.85);
+  --accent: #53f7d4;
+  --accent-soft: rgba(83, 247, 212, 0.2);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(circle at top, #141824 0%, #07080d 60%);
+  color: #f7f8fb;
+  min-height: 100vh;
+}
+
+#app {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+canvas#scene {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+
+.overlay.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.panel {
+  background: var(--glass);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 2.5rem 3rem;
+  border-radius: 18px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+  text-align: center;
+  max-width: 420px;
+}
+
+.panel h1 {
+  font-size: 2.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.panel h2 {
+  margin-top: 0;
+}
+
+.panel p {
+  color: #c7c9d3;
+}
+
+.controls {
+  display: grid;
+  gap: 0.6rem;
+  margin: 1.5rem 0 2rem;
+  text-align: left;
+}
+
+.controls span {
+  color: var(--accent);
+  font-weight: 600;
+  margin-right: 0.5rem;
+}
+
+button {
+  background: var(--accent);
+  color: #041016;
+  border: none;
+  padding: 0.75rem 1.6rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(83, 247, 212, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 35px rgba(83, 247, 212, 0.5);
+}
+
+#hud {
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 1.5rem;
+  pointer-events: none;
+}
+
+#hud .hud-panel {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  pointer-events: auto;
+}
+
+.status {
+  font-weight: 600;
+}
+
+#crash .panel {
+  border-color: rgba(255, 76, 76, 0.5);
+}
+
+#crash button {
+  background: #ff4c4c;
+  color: #fff;
+  box-shadow: 0 10px 25px rgba(255, 76, 76, 0.35);
+}
